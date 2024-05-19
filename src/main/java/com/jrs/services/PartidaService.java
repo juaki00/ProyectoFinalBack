@@ -1,7 +1,5 @@
 package com.jrs.services;
 
-import com.jrs.bean.ExisteUsuarioResponse;
-import com.jrs.bean.LoginResponse;
 import com.jrs.bean.RankingResponse;
 import com.jrs.models.Partida;
 import com.jrs.models.Usuario;
@@ -11,11 +9,7 @@ import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
-import java.sql.Time;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,7 +47,7 @@ public class PartidaService {
 
     public RankingResponse ranking(String token ) {
         RankingResponse rankingResponse = new RankingResponse();
-        List<Partida> partidas = new ArrayList<>();
+        List<Partida> partidas;
         if(securityService.validateToken( token )){
             partidas = partidaRepository.getRankingPartidas();
         }
@@ -66,7 +60,7 @@ public class PartidaService {
 
     public RankingResponse partidasDeUsuario(String nombre, String token) {
         RankingResponse rankingResponse = new RankingResponse();
-        List<Partida> partidas = new ArrayList<>();
+        List<Partida> partidas;
         if(securityService.validateToken( token )){
             partidas = partidaRepository.getPartidasDeUsuario(nombre);
         }

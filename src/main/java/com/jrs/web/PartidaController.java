@@ -1,12 +1,7 @@
 package com.jrs.web;
 
-import com.jrs.bean.ExisteUsuarioResponse;
-import com.jrs.bean.LoginResponse;
 import com.jrs.bean.RankingResponse;
-import com.jrs.models.Usuario;
 import com.jrs.services.PartidaService;
-import com.jrs.services.SecurityService;
-import com.jrs.services.UsuarioSerive;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -17,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/partidas")

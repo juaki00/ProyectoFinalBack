@@ -49,7 +49,7 @@ public class UsuarioSerive {
     }
 
     public ExisteUsuarioResponse existeUsuario(String nombre , String token ) {
-        ExisteUsuarioResponse existeUsuarioResponse = new ExisteUsuarioResponse();
+        ExisteUsuarioResponse existeUsuarioResponse;
         if(securityService.validateToken( token )) {
             existeUsuarioResponse = new ExisteUsuarioResponse();
             existeUsuarioResponse.setExiste(usuarioRepository.findById(nombre).isPresent());
