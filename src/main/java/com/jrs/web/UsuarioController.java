@@ -27,8 +27,8 @@ public class UsuarioController {
     @Autowired
     SecurityService securityService;
 
-    @Operation(description = "Todos los clientes",
-            summary = "Obtener todos los clientes", responses = {
+    @Operation(description = "Todos los usuarios",
+            summary = "Obtener todos los usuarios", responses = {
             @ApiResponse(description = "Datos obtenidos correctamente", responseCode = "200") ,
             @ApiResponse(description = "Error en el cliente", responseCode = "400") ,
             @ApiResponse(description = "Error en el servidor", responseCode = "500")
@@ -91,8 +91,8 @@ public class UsuarioController {
         return usuarioSerive.existeUsuario( nombre, token );
     }
 
-    @Operation(description = "Obtener clientes activos mejores a una cantidad",
-            summary = "Obtener clientes activos mejores a una cantidad", responses = {
+    @Operation(description = "Devuelve un Booleano indicando si existe el usuario y contraseña",
+            summary = "Devuelve un Booleano indicando si existe el usuario y contraseña", responses = {
             @ApiResponse(description = "Datos obtenidos correctamente", responseCode = "200") ,
             @ApiResponse(description = "Error en el cliente", responseCode = "400") ,
             @ApiResponse(description = "Error en el servidor", responseCode = "500")

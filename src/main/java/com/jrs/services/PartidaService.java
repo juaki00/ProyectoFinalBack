@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -54,6 +55,7 @@ public class PartidaService {
         else{
             throw new RuntimeException( "No autorizado, token no valido" );
         }
+        partidas = partidas.stream().limit(10).collect(Collectors.toList());
         rankingResponse.setPartidas(partidas);
         return rankingResponse;
     }
